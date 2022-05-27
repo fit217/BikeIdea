@@ -93,8 +93,14 @@ public class Jukebox : MonoBehaviour
     /// <summary>
     /// Sets the next track to play after the current loop
     /// </summary>
-    public void SetNextTrack(Track newTrack)
+    ///<param name="newTrack">The next track to be played</param> 
+    /// <param name="playNow">Toggles immediately playing the next track, skipping the current loop</param> 
+    public void SetNextTrack(Track newTrack, bool playNow = false)
     {
         nextTrack = newTrack;
+        if(playNow)
+        {
+            QueueNextSong();
+        }
     }
 }
